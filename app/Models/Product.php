@@ -14,6 +14,16 @@ class Product extends Model
         'name',
         'description',
         'price',
-        'image'
+        'image',
+        'user_id'
    ];
+
+    /**
+     * Get the user that owns the product.
+     */
+    // diventa sia metodo che proprietà della classe Product
+    public function user()
+    {
+        return $this->belongsTo(User::class); // Questo metodo indica che quando richiamo il metodo user() mi ritorna l'utente collegato al prodotto
+    }
 }

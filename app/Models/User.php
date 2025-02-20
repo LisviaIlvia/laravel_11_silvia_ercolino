@@ -45,4 +45,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the productd for the user.
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class); // Questo metodo indica che quando richiamo il metodo products() mi ritornano tutti i prodotti collegati all'utente
+    }
 }
